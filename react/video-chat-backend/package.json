@@ -1,0 +1,21 @@
+{
+  "name": "video-chat-backend",
+  "version": "0.1.0",
+  "description": "Video Chat Backend Server - SFU",
+  "main": "index.js",
+"scripts": {
+	"start": "nodemon --watch src index.js",
+	"dev": "npx concurrently  --kill-others \" npm start\" "
+},
+"author": "Christian Broberg",
+  "license": "MIT",
+  "devDependencies": {
+	"nodemon": "^3.1.0"
+},
+"dependencies": {
+	"dotenv": "^16.4.5",
+	"express": "^4.19.2",
+	"socket.io": "^4.7.5",
+	"uuid": "^9.0.1"
+}
+}

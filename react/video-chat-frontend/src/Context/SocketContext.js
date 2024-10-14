@@ -5,7 +5,7 @@ import Peer from "peerjs"
 import { v4 as UUIDv4 } from "uuid"
 import { peerReducer } from "../Reducers/peerReducer"
 import { addPeerAction } from "../Actions/peerAction"
-const WS_Server = "http://localhost:5500"
+const WS_Server = "http://192.168.39.140:5050"
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const SocketContext = createContext(null)
@@ -57,7 +57,7 @@ export const SocketProvider = ({ children }) => {
 		socket.on("room-created", enterRoom)
 
 		socket.on("get-users", fetchParticipantList)
-	}, [])
+	},) // removed dependency array }, [])
 
 	useEffect(() => {
 		if (!user || !stream) return
